@@ -1,0 +1,91 @@
+
+GetOrganelle v1.5.0-pre2
+
+gets organelle reads and genomes from genome skimming data by extending.
+Find updates in https://github.com/Kinggerm/GetOrganelle and see README.md for more information.
+
+Python 3.6.5 (default, Sep 20 2018, 17:13:01) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-28)]
+/Program/GetOrganelle/get_organelle_reads.py -1 SRR5602603_1.fastq.gz -2 SRR5602603_2.fastq.gz -F plant_cp -o 60R30--SRR5602603-plastome -s /Program/GetOrganelle/Library/SeqReference/plant_cp.fasta -R 30 -t 1 -k 75,95,115,127 --max-n-words 1E10 -w 0.60
+
+2018-12-15 23:43:28,303 - INFO: Unzipping reads file: SRR5602603_1.fastq.gz
+2018-12-15 23:43:40,038 - INFO: Unzipping reads file: SRR5602603_2.fastq.gz
+2018-12-15 23:43:53,110 - INFO: Pre-reading fastq ...
+2018-12-15 23:43:53,110 - INFO: Counting read qualities ...
+2018-12-15 23:44:09,781 - INFO: Identified quality encoding format = Sanger
+2018-12-15 23:44:09,847 - INFO: Trimming bases with qualities (0.00%): 33..33  !
+2018-12-15 23:44:14,996 - INFO: Mean error rate = 0.0165
+2018-12-15 23:44:15,119 - INFO: Counting read lengths ...
+2018-12-15 23:44:27,644 - INFO: Mean = 298.0 bp, maximum = 300 bp.
+2018-12-15 23:44:27,647 - INFO: Reads used = 3281958
+2018-12-15 23:44:27,647 - INFO: Pre-reading fastq finished.
+
+2018-12-15 23:44:27,647 - INFO: Making seed reads ...
+2018-12-15 23:44:27,649 - INFO: Bowtie2 index existed!
+2018-12-15 23:44:27,650 - INFO: Mapping reads to seed - bowtie2 index ...
+2018-12-15 23:46:36,861 - INFO: Mapping finished.
+2018-12-15 23:46:36,862 - INFO: Seed reads made: 60R30--SRR5602603-plastome/Initial.mapped.fq (12.27 M)
+2018-12-15 23:46:36,862 - INFO: Making seed reads finished.
+
+2018-12-15 23:46:36,862 - INFO: Checking seed reads and parameters ...
+2018-12-15 23:46:40,761 - INFO: Estimated plant_cp base-coverage = 90.8
+2018-12-15 23:46:40,761 - INFO: Setting '-w 179'
+2018-12-15 23:46:40,765 - INFO: Checking seed reads and parameters finished.
+
+2018-12-15 23:46:40,766 - INFO: Making read index ...
+2018-12-15 23:47:35,819 - INFO: Mem 1.92 G, 3260603 candidates in all 3281958 reads
+2018-12-15 23:47:35,887 - INFO: Pre-grouping reads ...
+2018-12-15 23:47:35,887 - INFO: Setting '--pre-w 179'
+2018-12-15 23:47:36,281 - INFO: Mem 1.764 G, 4742/4742 used/duplicated
+2018-12-15 23:47:41,443 - INFO: Mem 1.803 G, 3 groups made.
+2018-12-15 23:47:42,425 - INFO: Making read index finished.
+
+2018-12-15 23:47:42,426 - INFO: Extending ...
+2018-12-15 23:47:42,426 - INFO: Adding initial words ...
+2018-12-15 23:47:46,931 - INFO: AW 3250700
+2018-12-15 23:49:10,107 - INFO: Round 1: 3260603/3260603 AI 28777 AW 3731434 Mem 1.012
+2018-12-15 23:50:22,395 - INFO: Round 2: 3260603/3260603 AI 32098 AW 3909186 Mem 1.052
+2018-12-15 23:51:54,289 - INFO: Round 3: 3260603/3260603 AI 33387 AW 3973458 Mem 1.066
+2018-12-15 23:53:30,799 - INFO: Round 4: 3260603/3260603 AI 33883 AW 4001376 Mem 1.073
+2018-12-15 23:55:32,423 - INFO: Round 5: 3260603/3260603 AI 34100 AW 4012322 Mem 1.075
+2018-12-15 23:57:01,632 - INFO: Round 6: 3260603/3260603 AI 34246 AW 4020958 Mem 1.077
+2018-12-15 23:58:15,102 - INFO: Round 7: 3260603/3260603 AI 34332 AW 4024530 Mem 1.078
+2018-12-15 23:59:43,825 - INFO: Round 8: 3260603/3260603 AI 34360 AW 4026716 Mem 1.078
+2018-12-16 00:01:07,132 - INFO: Round 9: 3260603/3260603 AI 34400 AW 4029488 Mem 1.079
+2018-12-16 00:02:41,102 - INFO: Round 10: 3260603/3260603 AI 34430 AW 4031556 Mem 1.08
+2018-12-16 00:04:08,503 - INFO: Round 11: 3260603/3260603 AI 34553 AW 4038818 Mem 1.081
+2018-12-16 00:05:35,717 - INFO: Round 12: 3260603/3260603 AI 34661 AW 4044636 Mem 1.082
+2018-12-16 00:07:07,882 - INFO: Round 13: 3260603/3260603 AI 34684 AW 4045640 Mem 1.083
+2018-12-16 00:08:23,805 - INFO: Round 14: 3260603/3260603 AI 34684 AW 4045640 Mem 1.083
+2018-12-16 00:08:23,805 - INFO: No more reads found and terminated ...
+2018-12-16 00:08:33,410 - INFO: Extending finished.
+
+2018-12-16 00:08:33,923 - INFO: Separating filtered fastq file ... 
+2018-12-16 00:08:34,154 - INFO: Separating filtered fastq file finished!
+2018-12-16 00:08:34,167 - INFO: Setting '-k 75,85,95,105,115,127'
+2018-12-16 00:08:34,167 - INFO: Assembling using SPAdes ...
+2018-12-16 00:11:07,237 - INFO: Insert size = 536.415, deviation = 131.356, left quantile = 375, right quantile = 704
+2018-12-16 00:11:07,238 - INFO: Assembling finished.
+
+2018-12-16 00:11:07,239 - INFO: Slimming and disentangling graph ...
+2018-12-16 00:11:07,856 - INFO: Slimming      60R30--SRR5602603-plastome/filtered_spades/K127/assembly_graph.fastg finished!
+2018-12-16 00:11:08,897 - INFO: Disentangling 60R30--SRR5602603-plastome/filtered_spades/K127/assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg as a circular genome ... 
+2018-12-16 00:11:09,613 - INFO: Vertex_90034 #copy = 1
+2018-12-16 00:11:09,613 - INFO: Vertex_90196 #copy = 1
+2018-12-16 00:11:09,613 - INFO: Vertex_90200 #copy = 2
+2018-12-16 00:11:09,613 - INFO: Average plant_cp kmer-coverage = 36.392
+2018-12-16 00:11:09,613 - INFO: Average plant_cp base-coverage = 63.047
+2018-12-16 00:11:09,614 - INFO: Slimming and disentangling graph finished!
+
+2018-12-16 00:11:09,614 - INFO: Writing output ...
+2018-12-16 00:11:09,614 - WARNING: More than one circular genome structure produced ...
+2018-12-16 00:11:09,614 - WARNING: Please check the final result to confirm whether they are simply flip-flop configurations!
+2018-12-16 00:11:09,619 - INFO: Writing PATH1 of complete genome to 60R30--SRR5602603-plastome/plant_cp.K127.complete.graph1.1.path_sequence.fasta
+2018-12-16 00:11:09,623 - INFO: Writing PATH2 of complete genome to 60R30--SRR5602603-plastome/plant_cp.K127.complete.graph1.2.path_sequence.fasta
+2018-12-16 00:11:09,623 - INFO: Writing GRAPH to 60R30--SRR5602603-plastome/plant_cp.K127.complete.graph1.selected_graph.gfa
+2018-12-16 00:11:09,624 - INFO: Result status: circular genome
+2018-12-16 00:11:09,649 - INFO: Please visualize 60R30--SRR5602603-plastome/plant_cp.K127.assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg to confirm the final result.
+2018-12-16 00:11:09,649 - INFO: Writing output finished.
+
+Total cost 1661.82 s
+Thank you!

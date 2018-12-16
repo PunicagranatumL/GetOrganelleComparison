@@ -1,0 +1,87 @@
+
+GetOrganelle v1.5.0-pre2
+
+gets organelle reads and genomes from genome skimming data by extending.
+Find updates in https://github.com/Kinggerm/GetOrganelle and see README.md for more information.
+
+Python 3.6.5 (default, Sep 20 2018, 17:13:01) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-28)]
+/Program/GetOrganelle/get_organelle_reads.py -1 SRR4428742_1.fastq.gz -2 SRR4428742_2.fastq.gz -F plant_cp -o 65R10--SRR4428742-plastome -s /Program/GetOrganelle/Library/SeqReference/plant_cp.fasta -R 10 -t 1 -k 75,95,115,127 --max-n-words 1E10 -w 0.65
+
+2018-12-16 01:05:25,417 - INFO: Unzipping reads file: SRR4428742_1.fastq.gz
+2018-12-16 01:05:50,235 - INFO: Unzipping reads file: SRR4428742_2.fastq.gz
+2018-12-16 01:06:13,694 - INFO: Pre-reading fastq ...
+2018-12-16 01:06:13,694 - INFO: Counting read qualities ...
+2018-12-16 01:07:11,330 - INFO: Identified quality encoding format = Illumina 1.8+
+2018-12-16 01:07:11,464 - INFO: Trimming bases with qualities (0.00%): 33..33  !
+2018-12-16 01:07:22,204 - INFO: Mean error rate = 0.0048
+2018-12-16 01:07:22,352 - INFO: Counting read lengths ...
+2018-12-16 01:07:58,315 - INFO: Mean = 100.0 bp, maximum = 100 bp.
+2018-12-16 01:07:58,315 - INFO: Reads used = 16731072
+2018-12-16 01:07:58,315 - INFO: Pre-reading fastq finished.
+
+2018-12-16 01:07:58,316 - INFO: Making seed reads ...
+2018-12-16 01:07:58,317 - INFO: Bowtie2 index existed!
+2018-12-16 01:07:58,317 - INFO: Mapping reads to seed - bowtie2 index ...
+2018-12-16 01:15:41,941 - INFO: Mapping finished.
+2018-12-16 01:15:41,941 - INFO: Seed reads made: 65R10--SRR4428742-plastome/Initial.mapped.fq (208.57 M)
+2018-12-16 01:15:41,942 - INFO: Making seed reads finished.
+
+2018-12-16 01:15:41,942 - INFO: Checking seed reads and parameters ...
+2018-12-16 01:16:35,023 - INFO: Estimated plant_cp base-coverage = 1274.8
+2018-12-16 01:16:35,024 - INFO: Setting '-w 65'
+2018-12-16 01:16:35,033 - INFO: Checking seed reads and parameters finished.
+
+2018-12-16 01:16:35,033 - INFO: Making read index ...
+2018-12-16 01:20:01,227 - INFO: Mem 3.277 G, 14207329 candidates in all 16731072 reads
+2018-12-16 01:20:01,325 - INFO: Pre-grouping reads ...
+2018-12-16 01:20:01,325 - INFO: Setting '--pre-w 65'
+2018-12-16 01:20:03,372 - INFO: Mem 2.996 G, 200000/749176 used/duplicated
+2018-12-16 01:20:35,665 - INFO: Mem 4.304 G, 9302 groups made.
+2018-12-16 01:20:41,827 - INFO: Making read index finished.
+
+2018-12-16 01:20:41,827 - INFO: Extending ...
+2018-12-16 01:20:41,827 - INFO: Adding initial words ...
+2018-12-16 01:21:25,412 - INFO: AW 1819516
+2018-12-16 01:25:12,319 - INFO: Round 1: 14207329/14207329 AI 4192928 AW 47675328 Mem 8.32
+2018-12-16 01:27:05,935 - INFO: Round 2: 14207329/14207329 AI 5371551 AW 68852818 Mem 10.804
+2018-12-16 01:28:27,223 - INFO: Round 3: 14207329/14207329 AI 5636092 AW 74829346 Mem 11.753
+2018-12-16 01:30:00,038 - INFO: Round 4: 14207329/14207329 AI 5736799 AW 77126056 Mem 12.021
+2018-12-16 01:31:38,024 - INFO: Round 5: 14207329/14207329 AI 5787821 AW 78267426 Mem 12.155
+2018-12-16 01:33:16,198 - INFO: Round 6: 14207329/14207329 AI 5816099 AW 78905920 Mem 12.229
+2018-12-16 01:34:57,658 - INFO: Round 7: 14207329/14207329 AI 5834030 AW 79300312 Mem 12.275
+2018-12-16 01:36:31,777 - INFO: Round 8: 14207329/14207329 AI 5847253 AW 79583770 Mem 12.309
+2018-12-16 01:37:52,325 - INFO: Round 9: 14207329/14207329 AI 5856548 AW 79789716 Mem 12.333
+2018-12-16 01:39:23,586 - INFO: Round 10: 14207329/14207329 AI 5863440 AW 79939504 Mem 12.35
+2018-12-16 01:39:23,587 - INFO: Hit the round limit 10 and terminated ...
+2018-12-16 01:43:43,249 - INFO: Extending finished.
+
+2018-12-16 01:43:44,617 - INFO: Separating filtered fastq file ... 
+2018-12-16 01:44:54,670 - INFO: Separating filtered fastq file finished!
+2018-12-16 01:44:55,555 - INFO: Setting '-k 65,75,85,95'
+2018-12-16 01:44:55,555 - INFO: Assembling using SPAdes ...
+2018-12-16 05:00:33,636 - INFO: Insert size = 155.655, deviation = 12.2507, left quantile = 141, right quantile = 170
+2018-12-16 05:00:33,637 - INFO: Assembling finished.
+
+2018-12-16 05:00:33,637 - INFO: Slimming and disentangling graph ...
+2018-12-16 05:00:37,747 - INFO: Slimming      65R10--SRR4428742-plastome/filtered_spades/K95/assembly_graph.fastg finished!
+2018-12-16 05:00:39,001 - INFO: Disentangling 65R10--SRR4428742-plastome/filtered_spades/K95/assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg as a circular genome ... 
+2018-12-16 05:00:39,894 - INFO: Vertex_18418174_18468438_18347034_394134_18415862_18468690_18416654_18201364_18357782_18439130_18398178_18468396_18348970_18425878_18467874_18419440 #copy = 1
+2018-12-16 05:00:39,894 - INFO: Vertex_18433660_18404688 #copy = 1
+2018-12-16 05:00:39,894 - INFO: Vertex_18442186_18406132_18439336_18411646_18468490_18419388_18442376_18398018_18441690_18376648_18442206_18387858_18468634_18389846_18466632 #copy = 2
+2018-12-16 05:00:39,894 - INFO: Average plant_cp kmer-coverage = 61.931
+2018-12-16 05:00:39,895 - INFO: Average plant_cp base-coverage = 1032.306
+2018-12-16 05:00:39,895 - INFO: Slimming and disentangling graph finished!
+
+2018-12-16 05:00:39,895 - INFO: Writing output ...
+2018-12-16 05:00:39,895 - WARNING: More than one circular genome structure produced ...
+2018-12-16 05:00:39,895 - WARNING: Please check the final result to confirm whether they are simply flip-flop configurations!
+2018-12-16 05:00:39,903 - INFO: Writing PATH1 of complete genome to 65R10--SRR4428742-plastome/plant_cp.K95.complete.graph1.1.path_sequence.fasta
+2018-12-16 05:00:39,909 - INFO: Writing PATH2 of complete genome to 65R10--SRR4428742-plastome/plant_cp.K95.complete.graph1.2.path_sequence.fasta
+2018-12-16 05:00:39,909 - INFO: Writing GRAPH to 65R10--SRR4428742-plastome/plant_cp.K95.complete.graph1.selected_graph.gfa
+2018-12-16 05:00:39,910 - INFO: Result status: circular genome
+2018-12-16 05:00:40,046 - INFO: Please visualize 65R10--SRR4428742-plastome/plant_cp.K95.assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg to confirm the final result.
+2018-12-16 05:00:40,046 - INFO: Writing output finished.
+
+Total cost 14114.92 s
+Thank you!

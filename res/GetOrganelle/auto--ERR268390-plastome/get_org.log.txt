@@ -1,0 +1,142 @@
+
+GetOrganelle v1.5.0-pre2
+
+gets organelle reads and genomes from genome skimming data by extending.
+Find updates in https://github.com/Kinggerm/GetOrganelle and see README.md for more information.
+
+Python 3.6.5 (default, Sep 20 2018, 17:13:01) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-28)]
+/Program/GetOrganelle/get_organelle_reads.py -1 ERR268390_1.fastq.gz -2 ERR268390_2.fastq.gz -F plant_cp -o auto--ERR268390-plastome -s /Program/GetOrganelle/Library/SeqReference/plant_cp.fasta -R 10 -t 1 -k 75,95,115,127
+
+2018-12-15 21:46:10,380 - INFO: Unzipping reads file: ERR268390_1.fastq.gz
+2018-12-15 21:47:19,616 - INFO: Unzipping reads file: ERR268390_2.fastq.gz
+2018-12-15 21:47:49,013 - INFO: Pre-reading fastq ...
+2018-12-15 21:47:49,013 - INFO: Counting read qualities ...
+2018-12-15 21:49:01,267 - INFO: Identified quality encoding format = Illumina 1.8+
+2018-12-15 21:49:01,363 - INFO: Trimming bases with qualities (0.00%): 33..33  !
+2018-12-15 21:49:14,737 - INFO: Mean error rate = 0.0349
+2018-12-15 21:49:14,891 - INFO: Counting read lengths ...
+2018-12-15 21:50:05,953 - INFO: Mean = 101.0 bp, maximum = 101 bp.
+2018-12-15 21:50:05,954 - INFO: Reads used = 20000000
+2018-12-15 21:50:05,954 - INFO: Pre-reading fastq finished.
+
+2018-12-15 21:50:05,954 - INFO: Making seed reads ...
+2018-12-15 21:50:05,957 - INFO: Bowtie2 index existed!
+2018-12-15 21:50:05,957 - INFO: Mapping reads to seed - bowtie2 index ...
+2018-12-15 21:56:28,796 - INFO: Mapping finished.
+2018-12-15 21:56:28,797 - INFO: Seed reads made: auto--ERR268390-plastome/Initial.mapped.fq (15.47 M)
+2018-12-15 21:56:28,797 - INFO: Making seed reads finished.
+
+2018-12-15 21:56:28,797 - INFO: Checking seed reads and parameters ...
+2018-12-15 21:56:32,962 - INFO: Estimated plant_cp base-coverage = 135.53
+2018-12-15 21:56:32,963 - INFO: Setting '-w 49'
+2018-12-15 21:56:32,963 - INFO: The automatically-estimated word size does not ensure the best choice.
+2018-12-15 21:56:32,964 - INFO: If the result graph is not a circular organelle genome, 
+2018-12-15 21:56:32,964 - INFO: you could adjust the word size for another new run.
+2018-12-15 21:56:32,968 - INFO: Checking seed reads and parameters finished.
+
+2018-12-15 21:56:32,968 - INFO: Making read index ...
+2018-12-15 22:02:13,297 - INFO: Mem 4.779 G, 19451033 candidates in all 20000000 reads
+2018-12-15 22:02:13,385 - INFO: Pre-grouping reads ...
+2018-12-15 22:02:13,385 - INFO: Setting '--pre-w 49'
+2018-12-15 22:02:18,926 - INFO: Mem 4.317 G, 200000/459887 used/duplicated
+2018-12-15 22:03:04,914 - INFO: Mem 6.546 G, 6270 groups made.
+2018-12-15 22:03:13,654 - INFO: Making read index finished.
+
+2018-12-15 22:03:13,654 - INFO: Extending ...
+2018-12-15 22:03:13,654 - INFO: Adding initial words ...
+2018-12-15 22:03:16,656 - INFO: AW 685678
+2018-12-15 22:08:26,679 - INFO: Round 1: 19451033/19451033 AI 2814952 AW 74099158 Mem 10.957
+2018-12-15 22:12:30,491 - INFO: Round 2: 19451033/19451033 AI 4277797 AW 123707820 Mem 17.981
+2018-12-15 22:15:36,143 - INFO: Round 3: 19451033/19451033 AI 4798716 AW 142937620 Mem 19.927
+2018-12-15 22:18:34,749 - INFO: Round 4: 19451033/19451033 AI 5055410 AW 152184824 Mem 20.863
+2018-12-15 22:21:45,269 - INFO: Round 5: 19451033/19451033 AI 5203528 AW 157297622 Mem 21.381
+2018-12-15 22:24:44,579 - INFO: Round 6: 19451033/19451033 AI 5297898 AW 160412900 Mem 21.696
+2018-12-15 22:27:18,974 - INFO: Round 7: 19451033/19451033 AI 5363341 AW 162476078 Mem 21.906
+2018-12-15 22:30:24,667 - INFO: Round 8: 19451033/19451033 AI 5412494 AW 163942934 Mem 22.054
+2018-12-15 22:33:39,347 - INFO: Round 9: 19451033/19451033 AI 5450000 AW 165029678 Mem 22.165
+2018-12-15 22:36:05,973 - INFO: Round 10: 19451033/19451033 AI 5480184 AW 165874810 Mem 22.25
+2018-12-15 22:36:05,974 - INFO: Hit the round limit 10 and terminated ...
+2018-12-15 22:44:47,057 - INFO: Extending finished.
+
+2018-12-15 22:44:49,153 - INFO: Separating filtered fastq file ... 
+2018-12-15 22:45:34,516 - INFO: Separating filtered fastq file finished!
+2018-12-15 22:45:35,119 - INFO: Setting '-k 45,55,65,75,85,95'
+2018-12-15 22:45:35,120 - INFO: Assembling using SPAdes ...
+2018-12-16 02:32:35,607 - INFO: Insert size = 398.801, deviation = 139.396, left quantile = 219, right quantile = 583
+2018-12-16 02:32:35,608 - INFO: Assembling finished.
+
+2018-12-16 02:32:35,608 - INFO: Slimming and disentangling graph ...
+2018-12-16 02:32:41,722 - INFO: Slimming      auto--ERR268390-plastome/filtered_spades/K95/assembly_graph.fastg finished!
+2018-12-16 02:32:42,723 - INFO: Disentangling auto--ERR268390-plastome/filtered_spades/K95/assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg as a circular genome ... 
+2018-12-16 02:42:41,724 - INFO: Disentangling failed: Increase '--disentangle-time-limit' to meet the specific need of data!
+2018-12-16 02:42:47,390 - INFO: Slimming      auto--ERR268390-plastome/filtered_spades/K85/assembly_graph.fastg finished!
+2018-12-16 02:42:47,390 - INFO: Disentangling auto--ERR268390-plastome/filtered_spades/K85/assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg as a circular genome ... 
+2018-12-16 02:52:47,391 - INFO: Disentangling failed: Increase '--disentangle-time-limit' to meet the specific need of data!
+2018-12-16 02:52:54,707 - INFO: Slimming      auto--ERR268390-plastome/filtered_spades/K75/assembly_graph.fastg finished!
+2018-12-16 02:52:54,708 - INFO: Disentangling auto--ERR268390-plastome/filtered_spades/K75/assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg as a circular genome ... 
+2018-12-16 03:02:54,708 - INFO: Disentangling failed: Increase '--disentangle-time-limit' to meet the specific need of data!
+2018-12-16 03:03:01,232 - INFO: Slimming      auto--ERR268390-plastome/filtered_spades/K65/assembly_graph.fastg finished!
+2018-12-16 03:03:01,233 - INFO: Disentangling auto--ERR268390-plastome/filtered_spades/K65/assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg as a circular genome ... 
+2018-12-16 03:13:01,233 - INFO: Disentangling failed: Increase '--disentangle-time-limit' to meet the specific need of data!
+2018-12-16 03:13:08,096 - INFO: Slimming      auto--ERR268390-plastome/filtered_spades/K55/assembly_graph.fastg finished!
+2018-12-16 03:13:08,116 - INFO: Disentangling auto--ERR268390-plastome/filtered_spades/K55/assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg as a circular genome ... 
+2018-12-16 03:16:48,039 - INFO: Vertex_36714956 #copy = 1
+2018-12-16 03:16:48,039 - INFO: Vertex_37076958 #copy = 2
+2018-12-16 03:16:48,039 - INFO: Vertex_38458190 #copy = 2
+2018-12-16 03:16:48,039 - INFO: Vertex_38757412 #copy = 2
+2018-12-16 03:16:48,039 - INFO: Vertex_38782634_35702162_41109047_41109049_8321016_38916114_5036328_37199506_40945851_41389779 #copy = 1
+2018-12-16 03:16:48,039 - INFO: Vertex_38987040 #copy = 2
+2018-12-16 03:16:48,039 - INFO: Vertex_39042882 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_39054144 #copy = 2
+2018-12-16 03:16:48,040 - INFO: Vertex_39090600 #copy = 2
+2018-12-16 03:16:48,040 - INFO: Vertex_39090606 #copy = 2
+2018-12-16 03:16:48,040 - INFO: Vertex_40141284 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_40508353 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_40540641 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_40682327 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_40766671 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_40807771_36968384_40899251 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_40821897_1799570_39742391_40790477_40790479_40620095_40009494_40540643 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_40884147 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_40895429 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_41382527 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_41404471 #copy = 2
+2018-12-16 03:16:48,040 - INFO: Vertex_41404475 #copy = 1
+2018-12-16 03:16:48,040 - INFO: Vertex_41404477 #copy = 1
+2018-12-16 03:16:48,041 - INFO: Vertex_41482043_40888559_40777353_40978431 #copy = 1
+2018-12-16 03:16:48,041 - INFO: Average plant_cp kmer-coverage = 127.994
+2018-12-16 03:16:48,041 - INFO: Average plant_cp base-coverage = 275.073
+2018-12-16 03:16:48,041 - INFO: Slimming and disentangling graph finished!
+
+2018-12-16 03:16:48,041 - INFO: Writing output ...
+2018-12-16 03:16:48,176 - WARNING: Multiple circular genome structures produced!
+2018-12-16 03:16:48,176 - WARNING: Please check the existence of those isomers by using reads mapping (library information) or longer reads.
+2018-12-16 03:16:48,178 - INFO: Writing PATH1 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.1.path_sequence.fasta
+2018-12-16 03:16:48,180 - INFO: Writing PATH2 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.2.path_sequence.fasta
+2018-12-16 03:16:48,182 - INFO: Writing PATH3 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.3.path_sequence.fasta
+2018-12-16 03:16:48,184 - INFO: Writing PATH4 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.4.path_sequence.fasta
+2018-12-16 03:16:48,186 - INFO: Writing PATH5 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.5.path_sequence.fasta
+2018-12-16 03:16:48,188 - INFO: Writing PATH6 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.6.path_sequence.fasta
+2018-12-16 03:16:48,190 - INFO: Writing PATH7 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.7.path_sequence.fasta
+2018-12-16 03:16:48,192 - INFO: Writing PATH8 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.8.path_sequence.fasta
+2018-12-16 03:16:48,194 - INFO: Writing PATH9 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.9.path_sequence.fasta
+2018-12-16 03:16:48,196 - INFO: Writing PATH10 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.10.path_sequence.fasta
+2018-12-16 03:16:48,198 - INFO: Writing PATH11 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.11.path_sequence.fasta
+2018-12-16 03:16:48,200 - INFO: Writing PATH12 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.12.path_sequence.fasta
+2018-12-16 03:16:48,202 - INFO: Writing PATH13 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.13.path_sequence.fasta
+2018-12-16 03:16:48,204 - INFO: Writing PATH14 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.14.path_sequence.fasta
+2018-12-16 03:16:48,206 - INFO: Writing PATH15 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.15.path_sequence.fasta
+2018-12-16 03:16:48,208 - INFO: Writing PATH16 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.16.path_sequence.fasta
+2018-12-16 03:16:48,210 - INFO: Writing PATH17 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.17.path_sequence.fasta
+2018-12-16 03:16:48,212 - INFO: Writing PATH18 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.18.path_sequence.fasta
+2018-12-16 03:16:48,214 - INFO: Writing PATH19 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.19.path_sequence.fasta
+2018-12-16 03:16:48,216 - INFO: Writing PATH20 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.20.path_sequence.fasta
+2018-12-16 03:16:48,218 - INFO: Writing PATH21 of complete genome to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.21.path_sequence.fasta
+2018-12-16 03:16:48,218 - INFO: Writing GRAPH to auto--ERR268390-plastome/plant_cp.K55.complete.graph1.selected_graph.gfa
+2018-12-16 03:16:48,219 - INFO: Result status: circular genome
+2018-12-16 03:16:48,424 - INFO: Please visualize auto--ERR268390-plastome/plant_cp.K55.assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg to confirm the final result.
+2018-12-16 03:16:48,424 - INFO: Writing output finished.
+
+Total cost 19838.49 s
+Thank you!

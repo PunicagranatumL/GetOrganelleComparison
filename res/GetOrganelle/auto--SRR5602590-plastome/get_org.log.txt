@@ -1,0 +1,88 @@
+
+GetOrganelle v1.5.0-pre2
+
+gets organelle reads and genomes from genome skimming data by extending.
+Find updates in https://github.com/Kinggerm/GetOrganelle and see README.md for more information.
+
+Python 3.6.5 (default, Sep 20 2018, 17:13:01) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-28)]
+/Program/GetOrganelle/get_organelle_reads.py -1 SRR5602590_1.fastq.gz -2 SRR5602590_2.fastq.gz -F plant_cp -o auto--SRR5602590-plastome -s /Program/GetOrganelle/Library/SeqReference/plant_cp.fasta -R 10 -t 1 -k 75,95,115,127
+
+2018-12-15 21:46:08,800 - INFO: Unzipping reads file: SRR5602590_1.fastq.gz
+2018-12-15 21:46:41,038 - INFO: Unzipping reads file: SRR5602590_2.fastq.gz
+2018-12-15 21:47:06,418 - INFO: Pre-reading fastq ...
+2018-12-15 21:47:06,419 - INFO: Counting read qualities ...
+2018-12-15 21:47:21,222 - INFO: Identified quality encoding format = Sanger
+2018-12-15 21:47:21,288 - INFO: Trimming bases with qualities (0.00%): 33..33  !
+2018-12-15 21:47:26,181 - INFO: Mean error rate = 0.0178
+2018-12-15 21:47:26,247 - INFO: Counting read lengths ...
+2018-12-15 21:47:37,553 - INFO: Mean = 296.3 bp, maximum = 300 bp.
+2018-12-15 21:47:37,554 - INFO: Reads used = 2894046
+2018-12-15 21:47:37,554 - INFO: Pre-reading fastq finished.
+
+2018-12-15 21:47:37,554 - INFO: Making seed reads ...
+2018-12-15 21:47:37,556 - INFO: Bowtie2 index existed!
+2018-12-15 21:47:37,556 - INFO: Mapping reads to seed - bowtie2 index ...
+2018-12-15 21:50:22,437 - INFO: Mapping finished.
+2018-12-15 21:50:22,437 - INFO: Seed reads made: auto--SRR5602590-plastome/Initial.mapped.fq (27.34 M)
+2018-12-15 21:50:22,438 - INFO: Making seed reads finished.
+
+2018-12-15 21:50:22,438 - INFO: Checking seed reads and parameters ...
+2018-12-15 21:50:31,250 - INFO: Estimated plant_cp base-coverage = 245.95
+2018-12-15 21:50:31,251 - INFO: Setting '-w 143'
+2018-12-15 21:50:31,252 - INFO: The automatically-estimated word size does not ensure the best choice.
+2018-12-15 21:50:31,252 - INFO: If the result graph is not a circular organelle genome, 
+2018-12-15 21:50:31,252 - INFO: you could adjust the word size for another new run.
+2018-12-15 21:50:31,257 - INFO: Checking seed reads and parameters finished.
+
+2018-12-15 21:50:31,257 - INFO: Making read index ...
+2018-12-15 21:51:48,500 - INFO: Mem 1.827 G, 2861352 candidates in all 2894046 reads
+2018-12-15 21:51:48,584 - INFO: Pre-grouping reads ...
+2018-12-15 21:51:48,585 - INFO: Setting '--pre-w 143'
+2018-12-15 21:51:49,475 - INFO: Mem 1.671 G, 11937/11937 used/duplicated
+2018-12-15 21:52:02,454 - INFO: Mem 1.882 G, 151 groups made.
+2018-12-15 21:52:03,380 - INFO: Making read index finished.
+
+2018-12-15 21:52:03,380 - INFO: Extending ...
+2018-12-15 21:52:03,380 - INFO: Adding initial words ...
+2018-12-15 21:52:16,783 - INFO: AW 7880414
+2018-12-15 21:54:04,379 - INFO: Round 1: 2861352/2861352 AI 100809 AW 11685652 Mem 2.756
+2018-12-15 21:55:40,716 - INFO: Round 2: 2861352/2861352 AI 111564 AW 12366692 Mem 2.88
+2018-12-15 21:57:27,328 - INFO: Round 3: 2861352/2861352 AI 112455 AW 12469706 Mem 2.899
+2018-12-15 21:58:43,971 - INFO: Round 4: 2861352/2861352 AI 114230 AW 12664090 Mem 2.934
+2018-12-15 22:00:02,658 - INFO: Round 5: 2861352/2861352 AI 115150 AW 12767090 Mem 2.953
+2018-12-15 22:01:24,464 - INFO: Round 6: 2861352/2861352 AI 115246 AW 12780080 Mem 2.955
+2018-12-15 22:03:07,575 - INFO: Round 7: 2861352/2861352 AI 115262 AW 12782006 Mem 2.956
+2018-12-15 22:04:49,490 - INFO: Round 8: 2861352/2861352 AI 115262 AW 12782006 Mem 2.956
+2018-12-15 22:04:49,490 - INFO: No more reads found and terminated ...
+2018-12-15 22:05:14,229 - INFO: Extending finished.
+
+2018-12-15 22:05:14,915 - INFO: Separating filtered fastq file ... 
+2018-12-15 22:05:16,180 - INFO: Separating filtered fastq file finished!
+2018-12-15 22:05:16,207 - INFO: Setting '-k 75,85,95,105,115,127'
+2018-12-15 22:05:16,207 - INFO: Assembling using SPAdes ...
+2018-12-15 22:13:36,836 - INFO: Insert size = 516.769, deviation = 134.387, left quantile = 354, right quantile = 692
+2018-12-15 22:13:36,837 - INFO: Assembling finished.
+
+2018-12-15 22:13:36,838 - INFO: Slimming and disentangling graph ...
+2018-12-15 22:13:37,456 - INFO: Slimming      auto--SRR5602590-plastome/filtered_spades/K127/assembly_graph.fastg finished!
+2018-12-15 22:13:38,628 - INFO: Disentangling auto--SRR5602590-plastome/filtered_spades/K127/assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg as a circular genome ... 
+2018-12-15 22:13:39,398 - INFO: Vertex_236050 #copy = 1
+2018-12-15 22:13:39,399 - INFO: Vertex_236946 #copy = 1
+2018-12-15 22:13:39,399 - INFO: Vertex_237228 #copy = 2
+2018-12-15 22:13:39,399 - INFO: Average plant_cp kmer-coverage = 122.286
+2018-12-15 22:13:39,399 - INFO: Average plant_cp base-coverage = 212.759
+2018-12-15 22:13:39,399 - INFO: Slimming and disentangling graph finished!
+
+2018-12-15 22:13:39,399 - INFO: Writing output ...
+2018-12-15 22:13:39,399 - WARNING: More than one circular genome structure produced ...
+2018-12-15 22:13:39,400 - WARNING: Please check the final result to confirm whether they are simply flip-flop configurations!
+2018-12-15 22:13:39,405 - INFO: Writing PATH1 of complete genome to auto--SRR5602590-plastome/plant_cp.K127.complete.graph1.1.path_sequence.fasta
+2018-12-15 22:13:39,409 - INFO: Writing PATH2 of complete genome to auto--SRR5602590-plastome/plant_cp.K127.complete.graph1.2.path_sequence.fasta
+2018-12-15 22:13:39,409 - INFO: Writing GRAPH to auto--SRR5602590-plastome/plant_cp.K127.complete.graph1.selected_graph.gfa
+2018-12-15 22:13:39,410 - INFO: Result status: circular genome
+2018-12-15 22:13:39,440 - INFO: Please visualize auto--SRR5602590-plastome/plant_cp.K127.assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg to confirm the final result.
+2018-12-15 22:13:39,440 - INFO: Writing output finished.
+
+Total cost 1651.12 s
+Thank you!

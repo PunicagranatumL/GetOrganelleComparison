@@ -1,0 +1,90 @@
+
+GetOrganelle v1.5.0-pre2
+
+gets organelle reads and genomes from genome skimming data by extending.
+Find updates in https://github.com/Kinggerm/GetOrganelle and see README.md for more information.
+
+Python 3.6.5 (default, Sep 20 2018, 17:13:01) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-28)]
+/Program/GetOrganelle/get_organelle_reads.py -1 SRR5602593_1.fastq.gz -2 SRR5602593_2.fastq.gz -F plant_cp -o auto--SRR5602593-plastome -s /Program/GetOrganelle/Library/SeqReference/plant_cp.fasta -R 10 -t 1 -k 75,95,115,127
+
+2018-12-15 21:46:08,772 - INFO: Unzipping reads file: SRR5602593_1.fastq.gz
+2018-12-15 21:46:34,115 - INFO: Unzipping reads file: SRR5602593_2.fastq.gz
+2018-12-15 21:46:57,838 - INFO: Pre-reading fastq ...
+2018-12-15 21:46:57,838 - INFO: Counting read qualities ...
+2018-12-15 21:47:10,710 - INFO: Identified quality encoding format = Sanger
+2018-12-15 21:47:10,759 - INFO: Trimming bases with qualities (0.00%): 33..33  !
+2018-12-15 21:47:14,316 - INFO: Mean error rate = 0.0058
+2018-12-15 21:47:14,372 - INFO: Counting read lengths ...
+2018-12-15 21:47:24,077 - INFO: Mean = 244.1 bp, maximum = 250 bp.
+2018-12-15 21:47:24,077 - INFO: Reads used = 2725584
+2018-12-15 21:47:24,077 - INFO: Pre-reading fastq finished.
+
+2018-12-15 21:47:24,077 - INFO: Making seed reads ...
+2018-12-15 21:47:24,079 - INFO: Bowtie2 index existed!
+2018-12-15 21:47:24,080 - INFO: Mapping reads to seed - bowtie2 index ...
+2018-12-15 21:48:56,599 - INFO: Mapping finished.
+2018-12-15 21:48:56,600 - INFO: Seed reads made: auto--SRR5602593-plastome/Initial.mapped.fq (11.61 M)
+2018-12-15 21:48:56,600 - INFO: Making seed reads finished.
+
+2018-12-15 21:48:56,600 - INFO: Checking seed reads and parameters ...
+2018-12-15 21:48:59,458 - INFO: Estimated plant_cp base-coverage = 103.51
+2018-12-15 21:48:59,460 - INFO: Setting '-w 123'
+2018-12-15 21:48:59,460 - INFO: The automatically-estimated word size does not ensure the best choice.
+2018-12-15 21:48:59,460 - INFO: If the result graph is not a circular organelle genome, 
+2018-12-15 21:48:59,460 - INFO: you could adjust the word size for another new run.
+2018-12-15 21:48:59,465 - INFO: Checking seed reads and parameters finished.
+
+2018-12-15 21:48:59,465 - INFO: Making read index ...
+2018-12-15 21:49:59,232 - INFO: Mem 1.438 G, 2638121 candidates in all 2725584 reads
+2018-12-15 21:49:59,238 - INFO: Pre-grouping reads ...
+2018-12-15 21:49:59,239 - INFO: Setting '--pre-w 123'
+2018-12-15 21:49:59,732 - INFO: Mem 1.36 G, 27571/27571 used/duplicated
+2018-12-15 21:50:15,458 - INFO: Mem 2.044 G, 609 groups made.
+2018-12-15 21:50:16,371 - INFO: Making read index finished.
+
+2018-12-15 21:50:16,371 - INFO: Extending ...
+2018-12-15 21:50:16,372 - INFO: Adding initial words ...
+2018-12-15 21:50:21,661 - INFO: AW 1887516
+2018-12-15 21:51:23,343 - INFO: Round 1: 2638121/2638121 AI 142329 AW 8268284 Mem 1.877
+2018-12-15 21:52:15,223 - INFO: Round 2: 2638121/2638121 AI 205574 AW 12580398 Mem 2.844
+2018-12-15 21:53:17,479 - INFO: Round 3: 2638121/2638121 AI 239158 AW 15057114 Mem 3.256
+2018-12-15 21:54:10,389 - INFO: Round 4: 2638121/2638121 AI 258722 AW 16442788 Mem 3.487
+2018-12-15 21:54:57,514 - INFO: Round 5: 2638121/2638121 AI 271032 AW 17272640 Mem 3.625
+2018-12-15 21:55:45,090 - INFO: Round 6: 2638121/2638121 AI 280106 AW 17887752 Mem 3.727
+2018-12-15 21:56:34,545 - INFO: Round 7: 2638121/2638121 AI 286617 AW 18320900 Mem 3.799
+2018-12-15 21:57:29,391 - INFO: Round 8: 2638121/2638121 AI 291751 AW 18643726 Mem 3.853
+2018-12-15 21:58:20,661 - INFO: Round 9: 2638121/2638121 AI 295673 AW 18882384 Mem 3.892
+2018-12-15 21:59:06,624 - INFO: Round 10: 2638121/2638121 AI 298568 AW 19065226 Mem 3.923
+2018-12-15 21:59:06,625 - INFO: Hit the round limit 10 and terminated ...
+2018-12-15 21:59:24,472 - INFO: Extending finished.
+
+2018-12-15 21:59:24,896 - INFO: Separating filtered fastq file ... 
+2018-12-15 21:59:26,794 - INFO: Separating filtered fastq file finished!
+2018-12-15 21:59:26,849 - INFO: Setting '-k 75,95,115,127'
+2018-12-15 21:59:26,849 - INFO: Assembling using SPAdes ...
+2018-12-15 22:24:53,443 - INFO: Insert size = 563.797, deviation = 145.736, left quantile = 389, right quantile = 750
+2018-12-15 22:24:53,445 - INFO: Assembling finished.
+
+2018-12-15 22:24:53,445 - INFO: Slimming and disentangling graph ...
+2018-12-15 22:24:54,856 - INFO: Slimming      auto--SRR5602593-plastome/filtered_spades/K127/assembly_graph.fastg finished!
+2018-12-15 22:24:55,890 - INFO: Disentangling auto--SRR5602593-plastome/filtered_spades/K127/assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg as a circular genome ... 
+2018-12-15 22:24:56,794 - INFO: Vertex_1659638 #copy = 1
+2018-12-15 22:24:56,794 - INFO: Vertex_1746740_1884904_1715596_1669500_1690696 #copy = 1
+2018-12-15 22:24:56,794 - INFO: Vertex_1852332_1669884_1885854_1669910_1885852_1427316_1669954_1855608 #copy = 2
+2018-12-15 22:24:56,795 - INFO: Average plant_cp kmer-coverage = 45.557
+2018-12-15 22:24:56,795 - INFO: Average plant_cp base-coverage = 94.145
+2018-12-15 22:24:56,795 - INFO: Slimming and disentangling graph finished!
+
+2018-12-15 22:24:56,795 - INFO: Writing output ...
+2018-12-15 22:24:56,795 - WARNING: More than one circular genome structure produced ...
+2018-12-15 22:24:56,795 - WARNING: Please check the final result to confirm whether they are simply flip-flop configurations!
+2018-12-15 22:24:56,799 - INFO: Writing PATH1 of complete genome to auto--SRR5602593-plastome/plant_cp.K127.complete.graph1.1.path_sequence.fasta
+2018-12-15 22:24:56,803 - INFO: Writing PATH2 of complete genome to auto--SRR5602593-plastome/plant_cp.K127.complete.graph1.2.path_sequence.fasta
+2018-12-15 22:24:56,803 - INFO: Writing GRAPH to auto--SRR5602593-plastome/plant_cp.K127.complete.graph1.selected_graph.gfa
+2018-12-15 22:24:56,805 - INFO: Result status: circular genome
+2018-12-15 22:24:56,839 - INFO: Please visualize auto--SRR5602593-plastome/plant_cp.K127.assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg to confirm the final result.
+2018-12-15 22:24:56,840 - INFO: Writing output finished.
+
+Total cost 2328.55 s
+Thank you!

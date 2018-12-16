@@ -1,0 +1,90 @@
+
+GetOrganelle v1.5.0-pre2
+
+gets organelle reads and genomes from genome skimming data by extending.
+Find updates in https://github.com/Kinggerm/GetOrganelle and see README.md for more information.
+
+Python 3.6.5 (default, Sep 20 2018, 17:13:01) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-28)]
+/Program/GetOrganelle/get_organelle_reads.py -1 SRR5602592_1.fastq.gz -2 SRR5602592_2.fastq.gz -F plant_cp -o auto--SRR5602592-plastome -s /Program/GetOrganelle/Library/SeqReference/plant_cp.fasta -R 10 -t 1 -k 75,95,115,127
+
+2018-12-15 21:46:08,930 - INFO: Unzipping reads file: SRR5602592_1.fastq.gz
+2018-12-15 21:46:44,213 - INFO: Unzipping reads file: SRR5602592_2.fastq.gz
+2018-12-15 21:47:09,829 - INFO: Pre-reading fastq ...
+2018-12-15 21:47:09,829 - INFO: Counting read qualities ...
+2018-12-15 21:47:30,077 - INFO: Identified quality encoding format = Sanger
+2018-12-15 21:47:30,151 - INFO: Trimming bases with qualities (0.00%): 33..33  !
+2018-12-15 21:47:35,319 - INFO: Mean error rate = 0.005
+2018-12-15 21:47:35,393 - INFO: Counting read lengths ...
+2018-12-15 21:47:49,484 - INFO: Mean = 246.9 bp, maximum = 250 bp.
+2018-12-15 21:47:49,485 - INFO: Reads used = 3903784
+2018-12-15 21:47:49,485 - INFO: Pre-reading fastq finished.
+
+2018-12-15 21:47:49,485 - INFO: Making seed reads ...
+2018-12-15 21:47:49,487 - INFO: Bowtie2 index existed!
+2018-12-15 21:47:49,488 - INFO: Mapping reads to seed - bowtie2 index ...
+2018-12-15 21:50:13,056 - INFO: Mapping finished.
+2018-12-15 21:50:13,056 - INFO: Seed reads made: auto--SRR5602592-plastome/Initial.mapped.fq (19.86 M)
+2018-12-15 21:50:13,056 - INFO: Making seed reads finished.
+
+2018-12-15 21:50:13,057 - INFO: Checking seed reads and parameters ...
+2018-12-15 21:50:19,733 - INFO: Estimated plant_cp base-coverage = 185.78
+2018-12-15 21:50:19,734 - INFO: Setting '-w 139'
+2018-12-15 21:50:19,734 - INFO: The automatically-estimated word size does not ensure the best choice.
+2018-12-15 21:50:19,734 - INFO: If the result graph is not a circular organelle genome, 
+2018-12-15 21:50:19,734 - INFO: you could adjust the word size for another new run.
+2018-12-15 21:50:19,739 - INFO: Checking seed reads and parameters finished.
+
+2018-12-15 21:50:19,739 - INFO: Making read index ...
+2018-12-15 21:51:35,520 - INFO: Mem 1.863 G, 3834523 candidates in all 3903784 reads
+2018-12-15 21:51:35,531 - INFO: Pre-grouping reads ...
+2018-12-15 21:51:35,531 - INFO: Setting '--pre-w 139'
+2018-12-15 21:51:36,683 - INFO: Mem 1.663 G, 30530/30530 used/duplicated
+2018-12-15 21:51:56,547 - INFO: Mem 2.319 G, 602 groups made.
+2018-12-15 21:51:57,584 - INFO: Making read index finished.
+
+2018-12-15 21:51:57,584 - INFO: Extending ...
+2018-12-15 21:51:57,584 - INFO: Adding initial words ...
+2018-12-15 21:52:05,372 - INFO: AW 3012254
+2018-12-15 21:54:00,248 - INFO: Round 1: 3834523/3834523 AI 125708 AW 6430304 Mem 1.705
+2018-12-15 21:55:50,239 - INFO: Round 2: 3834523/3834523 AI 230045 AW 12262790 Mem 3.018
+2018-12-15 21:57:32,662 - INFO: Round 3: 3834523/3834523 AI 271743 AW 15252710 Mem 3.562
+2018-12-15 21:59:13,161 - INFO: Round 4: 3834523/3834523 AI 299388 AW 17199580 Mem 3.916
+2018-12-15 22:00:50,092 - INFO: Round 5: 3834523/3834523 AI 310876 AW 18052454 Mem 4.072
+2018-12-15 22:02:32,188 - INFO: Round 6: 3834523/3834523 AI 318227 AW 18587160 Mem 4.169
+2018-12-15 22:03:53,570 - INFO: Round 7: 3834523/3834523 AI 323900 AW 18980178 Mem 4.241
+2018-12-15 22:05:27,385 - INFO: Round 8: 3834523/3834523 AI 328586 AW 19283240 Mem 4.296
+2018-12-15 22:06:56,045 - INFO: Round 9: 3834523/3834523 AI 332610 AW 19527096 Mem 4.34
+2018-12-15 22:08:16,787 - INFO: Round 10: 3834523/3834523 AI 335779 AW 19719968 Mem 4.375
+2018-12-15 22:08:16,788 - INFO: Hit the round limit 10 and terminated ...
+2018-12-15 22:08:43,548 - INFO: Extending finished.
+
+2018-12-15 22:08:44,226 - INFO: Separating filtered fastq file ... 
+2018-12-15 22:08:47,920 - INFO: Separating filtered fastq file finished!
+2018-12-15 22:08:47,978 - INFO: Setting '-k 75,85,95,105,115,127'
+2018-12-15 22:08:47,978 - INFO: Assembling using SPAdes ...
+2018-12-15 22:36:50,844 - INFO: Insert size = 548.943, deviation = 133.997, left quantile = 380, right quantile = 716
+2018-12-15 22:36:50,845 - INFO: Assembling finished.
+
+2018-12-15 22:36:50,845 - INFO: Slimming and disentangling graph ...
+2018-12-15 22:36:51,973 - INFO: Slimming      auto--SRR5602592-plastome/filtered_spades/K127/assembly_graph.fastg finished!
+2018-12-15 22:36:53,037 - INFO: Disentangling auto--SRR5602592-plastome/filtered_spades/K127/assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg as a circular genome ... 
+2018-12-15 22:36:54,221 - INFO: Vertex_1840504 #copy = 1
+2018-12-15 22:36:54,221 - INFO: Vertex_1852422_2068206_2004736 #copy = 1
+2018-12-15 22:36:54,222 - INFO: Vertex_2098752_1575498_2099228_2086468_2051308_2028140 #copy = 2
+2018-12-15 22:36:54,222 - INFO: Average plant_cp kmer-coverage = 81.958
+2018-12-15 22:36:54,222 - INFO: Average plant_cp base-coverage = 167.369
+2018-12-15 22:36:54,222 - INFO: Slimming and disentangling graph finished!
+
+2018-12-15 22:36:54,222 - INFO: Writing output ...
+2018-12-15 22:36:54,222 - WARNING: More than one circular genome structure produced ...
+2018-12-15 22:36:54,223 - WARNING: Please check the final result to confirm whether they are simply flip-flop configurations!
+2018-12-15 22:36:54,229 - INFO: Writing PATH1 of complete genome to auto--SRR5602592-plastome/plant_cp.K127.complete.graph1.1.path_sequence.fasta
+2018-12-15 22:36:54,235 - INFO: Writing PATH2 of complete genome to auto--SRR5602592-plastome/plant_cp.K127.complete.graph1.2.path_sequence.fasta
+2018-12-15 22:36:54,236 - INFO: Writing GRAPH to auto--SRR5602592-plastome/plant_cp.K127.complete.graph1.selected_graph.gfa
+2018-12-15 22:36:54,236 - INFO: Result status: circular genome
+2018-12-15 22:36:54,316 - INFO: Please visualize auto--SRR5602592-plastome/plant_cp.K127.assembly_graph.fastg.extend_plant_cp.del_plant_mt.fastg to confirm the final result.
+2018-12-15 22:36:54,316 - INFO: Writing output finished.
+
+Total cost 3045.86 s
+Thank you!
